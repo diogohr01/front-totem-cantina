@@ -6,11 +6,17 @@
     import { useRouter } from 'next/navigation'
     import image from "../dashboard/img/MassaPastel500g-2-1000x1167.jpg"
     import Image from 'next/image';
-import { TRUE } from 'sass';
 
     interface SoldData {
         totalValue: number;
     }
+    interface Products{
+        name:String
+        price: String
+        description: String
+        banner: String
+    }
+
 
     export default function Dashboard() {
         const [soldData, setSoldData] = useState<SoldData | null>(null);
@@ -18,6 +24,7 @@ import { TRUE } from 'sass';
         const router = useRouter();
         const [segundos, setSegundos] = useState<number>(60);
         const intervalRef = useRef<NodeJS.Timeout | null>(null);
+        const [products, setProducts] = useState<Products[] | null>(null)
 
         async function getSold() {
             const token = getCookieClient();
@@ -47,6 +54,21 @@ import { TRUE } from 'sass';
                 setRankingProduct(response.data.produtos);
             } catch (error) {
                 console.error("Erro ao buscar os dados do Ranking de produtos:", error);
+            }
+        }
+        async function Products() {
+            const token = getCookieClient();
+
+            try {
+                const response = await api.get('/products', {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                console.log(response.data)
+                setProducts(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar os dados dos produtos:", error);
             }
         }
 
@@ -82,6 +104,7 @@ import { TRUE } from 'sass';
             getSold();
             getRankingProduct();
             setContagem();
+            Products();
 
             return () => {
                 if (intervalRef.current) {
@@ -96,13 +119,16 @@ import { TRUE } from 'sass';
 
                     <div className={styles.main}>
                         <article className={styles.article}>
+                        {products?.map((item) => (
                             <span className={styles.rankingProdutos}>
-                                <span className={styles.ranking}> Card de produtos </span>
-                                <span className={styles.image}>
-                                   <Image src={image} alt="Imagem de pasteis" className="custom-image"  quality={100} width={270} height={260} style={{objectFit: "cover", borderRadius: "5px"}}	 />
+                            <span className={styles.ranking}> {item.name} </span>
+                            <span className={styles.image}>
+                               <Image src={image} alt="Imagem de pasteis" className="custom-image"  quality={100} width={270} height={260} style={{objectFit: "cover", borderRadius: "5px"}}	 />
 
-                                </span>
                             </span>
+                        </span>
+                        ))}
+                            
                         </article>
                     </div>
                 </section>
