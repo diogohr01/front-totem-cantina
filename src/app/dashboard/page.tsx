@@ -11,6 +11,7 @@
         totalValue: number;
     }
     interface Products{
+        id: string;
         name:String
         price: String
         description: String
@@ -119,14 +120,20 @@
 
                     <div className={styles.main}>
                         <article className={styles.article}>
-                        {products?.map((item) => (
+                        {products?.map((item, index) => (
+                            <option key={item.id} value={index}>
                             <span className={styles.rankingProdutos}>
                             <span className={styles.ranking}> {item.name} </span>
                             <span className={styles.image}>
                                <Image src={image} alt="Imagem de pasteis" className="custom-image"  quality={100} width={270} height={260} style={{objectFit: "cover", borderRadius: "5px"}}	 />
 
                             </span>
+                            <div className={styles.footerCard}>
+                            <span className={styles.productPrice}>R$ {item.price}</span>
+                            <span> </span>
+                            </div>
                         </span>
+                        </option>
                         ))}
                             
                         </article>
