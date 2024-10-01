@@ -1,0 +1,224 @@
+
+.containerHeader{
+      display: flex;
+      border-radius: 16px;
+      margin: 0 300px;
+      max-width: 1200px;
+    //  border: 4px solid white;
+      justify-content: flex-start;
+      min-width: 1280px;
+      height: auto;
+      flex-direction: column;
+      
+}
+
+.description{
+      display: flex;
+      height: 7rem;
+      padding: 40px 150px;
+      background-color: var(--dark-700);
+      color: var(--white);
+      border-radius: 16px;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 2px;
+     // border: 2px solid white;
+      
+}
+
+.container{
+      display: flex;
+      justify-content: center;
+      min-width: 1280px;
+    //  border: 4px solid white;
+      min-height: 720px;   
+      
+}
+
+.totalVendido{
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: auto;
+      
+}
+.card{
+      width: 100%;
+      justify-content: space-between ;
+    //  border: 2px solid white;
+}
+
+.main{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start ;
+      width: 100%;
+      height: 100%;
+      
+}
+
+.article{
+      margin-top: 2rem;
+    //  border: 2px solid white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 4rem;
+
+
+
+      
+    
+      
+
+}
+.aside{
+    //  border: 2px solid white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 10rem;
+}
+
+.rankingProdutos{
+      background-color: var(--dark-700);
+      width: 25%;
+      height: 60%;
+      margin: 16px 16px 16px 0;
+      border-radius: 16px;
+      display: flex;
+      color: var(--white);
+      //border: 2px solid white;
+      flex-direction: column;
+     
+}
+
+.extrato{
+      background-color: var(--dark-700);
+      width: 100%;
+      margin: 16px 0 16px 16px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      color: var(--white);
+      //border: 2px solid white;
+
+}
+.tag{
+      width: 16px;
+     // background-color: var(--orange-700);
+      height: 100%;
+      border-radius: 16px 0 0 16px;
+      margin-right: 16px;
+      position: relative;
+      
+}
+
+.center{
+      background-color: var(--dark-700);
+      width: 100%;
+      margin: 16px 16px 16px 16px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      color: var(--white);
+      //border: 2px solid white;
+}
+
+.rankingProduct {
+      margin-left: 0;   
+      margin-top: 10px;
+      
+      border-bottom: solid 1.5px gray;
+  }
+
+  .descriptionProduct {
+      margin-left: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* Distribui os itens com espaçamento entre eles */
+      padding: 10px;
+      font-size: 15px;
+  }
+  
+  .descriptionProduct p {
+      flex: 1; 
+  }
+  .descriptionProduct p:first-child {
+      flex: 2; 
+      white-space: nowrap; /* não pula para outra linha */
+      overflow: hidden; 
+      text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto for muito longo */
+  }
+  
+  
+  .descriptionProduct p:nth-child(2) {
+      text-align: center; 
+      color: var(--orange-700);
+  }
+  
+  .descriptionProduct p:nth-child(3) {
+      text-align: right; 
+      margin-right: 15px;
+  }
+  
+
+.noProducts{
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 20px;
+      margin-left: 60px;
+
+}
+.ranking{
+      display: flex;
+      justify-content: center;
+      background-color: var(--orange-700);
+      font-weight: bold;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+            border-bottom: solid 1.5px gray;
+      color: var(--white);
+      
+}
+
+.atualizar{
+      display: flex;
+      gap: 16px;
+      margin-bottom: 1.5px
+      
+}
+
+.buttonOrder{
+      border-radius: 8px;
+      background-color: var(--orange-700);
+      font-weight: bold;
+      font-size: 16px;
+      color: var(--white);
+      transition: all 0.2s;
+      border: 0;
+      padding: 3px;
+      
+      &:hover{
+            color: #000;
+      }
+}
+
+.image{
+      width: 100%;
+      height: 60%;
+      padding: 1rem;
+      border-radius: 10px;
+
+}
+
+@media (max-width: 400px) {
+      .article{
+            margin-left: 4rem;
+            flex-direction: column;
+      }
+    }

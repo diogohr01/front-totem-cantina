@@ -43,7 +43,7 @@ export default function Home() {
       return;
     }
     
-   {/*redirect('/dashboard')*/} 
+   redirect('/dashboard') 
   } 
   return (
    <>

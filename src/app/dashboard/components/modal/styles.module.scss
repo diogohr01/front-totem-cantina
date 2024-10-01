@@ -1,0 +1,76 @@
+.dialogContainer{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0, 0.50);
+      z-index: 999;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 16px;
+      backdrop-filter: blur(4px);
+}
+
+.dialogContent{
+      background-color: var(--dark-700);
+      margin: auto;
+      padding: 16px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      color: var(--white);
+
+      h2{
+            margin-bottom: 16px;
+            margin-top: 8px;
+
+      }
+}
+
+.table{
+      background-color: var(--dark-900);
+      padding: 8px;
+      border-radius: 4px;
+}
+
+.dialogBack{
+      background-color: transparent;
+      border: 0;
+      transition: all 0.5s;
+
+      &:hover{
+            transform: scale(1.2);
+ 
+      }
+}
+
+.item{
+      display: flex;
+      flex-direction: column;
+      margin: 16px 0;
+      font-size: 16px;
+      border: 2px solid;
+      padding: 4px;
+      border-radius: 6px;
+      &:hover{
+      background-color: var(--dark-900);
+
+      }
+}
+.description{
+      color: #CCC;
+      margin-top: 4px
+}
+
+.buttonOrder{
+      border: 0;
+      border-radius: 8px;
+      background-color: var(--dark-900);
+      color: var(--red-900);
+      padding: 12px ;
+      font-weight: bold;
+}
