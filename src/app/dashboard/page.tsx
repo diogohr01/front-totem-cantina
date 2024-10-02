@@ -6,6 +6,7 @@
     import { useRouter } from 'next/navigation'
     import image from "../dashboard/img/MassaPastel500g-2-1000x1167.jpg"
     import Image from 'next/image';
+    import { IoMdAddCircleOutline, IoMdRemoveCircleOutline } from "react-icons/io";
 
     interface SoldData {
         totalValue: number;
@@ -26,6 +27,8 @@
         const [segundos, setSegundos] = useState<number>(60);
         const intervalRef = useRef<NodeJS.Timeout | null>(null);
         const [products, setProducts] = useState<Products[] | null>(null)
+        const [quantities, setQuantities] = useState<{[key: string]: number}>({});
+
 
         async function getSold() {
             const token = getCookieClient();
@@ -72,6 +75,14 @@
                 console.error("Erro ao buscar os dados dos produtos:", error);
             }
         }
+
+        const handleQuantityChange = (id: string, change: number) => {
+            setQuantities(prev => ({
+                ...prev,
+                [id]: Math.max(0, (prev[id] || 0) + change)
+            }));
+        };
+
 
         function setContagem() {
             if (intervalRef.current) {
@@ -130,7 +141,11 @@
                             </span>
                             <div className={styles.footerCard}>
                             <span className={styles.productPrice}>R$ {item.price}</span>
-                            <span> </span>
+                            <div className={styles.icon}>
+                            <IoMdRemoveCircleOutline size={25}  onClick={() => handleQuantityChange(item.id, -1)}/>
+                            {quantities[item.id] || 0}
+                            <IoMdAddCircleOutline size={25} onClick={() => handleQuantityChange(item.id, 1)} />
+                            </div>
                             </div>
                         </span>
                         </option>
