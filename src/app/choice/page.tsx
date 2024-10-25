@@ -34,11 +34,14 @@ export default function Dashboard() {
   return (
     <>
       <div className={styles.main} >
+        <div className={styles.box}>
         <div className={styles.order} onClick={itemOrder}>
           <Button name='Começar pedido'/>
         </div>
-        <Button name='Criar usuário admin'/>
+        
+        </div>
       </div>
+
     </>
   );
 }

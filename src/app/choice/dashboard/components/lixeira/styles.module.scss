@@ -1,12 +1,18 @@
-.lixeira{
-    height: 40px;
+.trashButton{
     border: 0;
     border-radius: 8px;
-    background-color: var(--orange-700);
+    background-color: var(--white);
     font-weight: bold;
     font-size: 16px;
-    color: var(--white);
+    color: var(--orange-700);
     transition: all 0.5s;
+    width: 35rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
     
     &:hover{
           color: #000;

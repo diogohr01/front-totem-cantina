@@ -1,22 +1,29 @@
 "use client";
-import { FaTrashAlt } from 'react-icons/fa'; 
-import styles from './styles.module.scss'
-import { useFormStatus} from 'react-dom';
+import { FaTrashAlt } from 'react-icons/fa';
+import styles from './styles.module.scss'; // Certifique-se de que esse arquivo tenha a classe 'trashButton'
+import { useFormStatus } from 'react-dom'; // Verifique se esse hook realmente existe, pode ser necessário corrigir o import.
 
 interface Props {
-    onClick: () => void;  
+  onClick: () => void;
+  name: String;
 }
 
-export default function lixeira({ onClick }: Props) {
-    const { pending } = useFormStatus();
-    return (
-        <button 
-            type='button' 
-            disabled={pending} 
-            className={styles.trashButton} 
-            onClick={onClick}
+export default function Lixeira({ onClick, name }: Props) {
+
+  const pending = false; 
+
+  return (
+    <>
+      
+        <button
+          type='button'
+          disabled={pending}
+          className={styles.trashButton}
+          onClick={onClick}
         >
-            {pending ? 'Carregando' : <FaTrashAlt />} 
+          {name}{pending ? 'Carregando' : <FaTrashAlt size={30} />}
         </button>
-    );
+      
+    </>
+  );
 }
