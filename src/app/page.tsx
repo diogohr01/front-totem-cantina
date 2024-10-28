@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import logoImg from '/public/logo.svg'
-import Link from 'next/link'
+import  Link from 'next/link'
 import { api } from "@/services/api";
 import { redirect } from "next/navigation";
 import {cookies} from 'next/headers'
@@ -47,7 +47,11 @@ export default function Home() {
   } 
   return (
    <>
-   <div className={styles.containerCenter}>
+   <head>
+    <title>LOGIN</title>
+     <link rel="icon" href="/favicon.ico" type = "image/x-icon" sizes = "16x16"/>
+   </head>
+    <div className={styles.containerCenter}>
     <Image
     src={logoImgCafe}
     alt="Logo da pizzaria" 
@@ -60,7 +64,7 @@ export default function Home() {
       </form>
      
     </section>
-   </div>
+    </div>
    </>
   );
 }

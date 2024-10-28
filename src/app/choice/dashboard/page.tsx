@@ -11,6 +11,8 @@ import { IoMdAddCircleOutline, IoMdRemoveCircleOutline } from "react-icons/io";
 import { Button } from '../dashboard/components/button';
 import Lixeira from './components/lixeira';
 import { FaCartShopping } from "react-icons/fa6";
+import Head from 'next/head';
+import logoCafe from '/public/logoCafe.svg';
 
 interface Products {
   id: string;
@@ -140,6 +142,9 @@ const Dashboard = () => {
   return (
     <main className={styles.container}>
       <section className={styles.containerHeader}>
+        <Head> 
+          <link rel="icon" href="logoCafe.svg" type = "image/svg+xml" />
+        </Head>
         <div className={styles.main}>
           <article className={styles.article}>
             {products?.map((item, index) => (
