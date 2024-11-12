@@ -48,7 +48,7 @@ export default function Home() {
   return (
    <>
    <head>
-    <title>LOGIN</title>
+    <title>Cantina - 𝙎𝙀𝙉𝘼𝙄</title>
      <link rel="icon" href="/favicon.ico" type = "image/x-icon" sizes = "16x16"/>
    </head>
     <div className={styles.containerCenter}>
